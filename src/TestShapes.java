@@ -1,4 +1,8 @@
+import javafx.scene.shape.Circle;
+
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 
 /**
  *
@@ -9,7 +13,7 @@ import java.util.ArrayList;
 
 public class TestShapes {
     public static void main(String[] args) {
-
+        Scanner input = new Scanner(System.in);
         /*
         This will be our actual program that we request some information from user to create 3 objects
         We will create 1 Rectangle, 1 Square and 1 Circle object
@@ -41,6 +45,41 @@ public class TestShapes {
          Circle has the largest area as 50.24
          */
 
+        Rectangle rectangle = new Rectangle();
+        System.out.println("Please enter the width of rectangle");
+        rectangle.setWidth(input.nextDouble());
+        System.out.println("Please enter height of rectangle");
+        rectangle.setHeight(input.nextDouble());
+
+        Square square = new Square();
+        System.out.println("Please enter the side of square");
+        square.setSide(input.nextDouble());
+
+        Circle circle = new Circle();
+        System.out.println("Please enter the radius");
+        circle.setRadius(input.nextDouble());
+
+        List<Shape> shapes = new ArrayList<>();
+        shapes.add(circle);
+        shapes.add(rectangle);
+        shapes.add(square);
+
+        double max = Double.MIN_VALUE;
+        Shape maxArea = null;
+
+        for (Shape element : shapes){
+            System.out.println(element);
+            System.out.println("Area of the " + element.getClass().getSimpleName() + " is = " + element.area());
+            System.out.println("Perimeter of the " + element.getClass().getSimpleName() + " is = " + element.perimeter() + "\n");
+
+            if (element.area() > max ) {
+                max = element.area();
+                maxArea = element;
+            }
+        }
+
+        assert maxArea != null;
+        System.out.println(maxArea.getClass().getSimpleName() + " has the largest area as " + maxArea.area());
 
     }
 }
