@@ -6,7 +6,7 @@
  */
 
 //implement Shape interface and provide abstract method implementation
-public class Circle implements Shape{
+public class Circles implements Shape{
 
     /*
     Define an instance variable called as pi and give initial value as 3.14

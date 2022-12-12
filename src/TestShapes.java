@@ -55,12 +55,12 @@ public class TestShapes {
         System.out.println("Please enter the side of square");
         square.setSide(input.nextDouble());
 
-        Circle circle = new Circle();
+        Circles circles= new Circles();
         System.out.println("Please enter the radius");
-        circle.setRadius(input.nextDouble());
+        circles.setRadius(input.nextDouble());
 
         List<Shape> shapes = new ArrayList<>();
-        shapes.add(circle);
+        shapes.add(circles);
         shapes.add(rectangle);
         shapes.add(square);
 
